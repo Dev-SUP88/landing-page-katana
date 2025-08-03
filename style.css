@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@500;700&display=swap");
+
+:root {
+    --primary-color: #4b0082;
+    --bg-color: #121212;
+    --bg-card-color: #c0c0c0;
+    --color-secret: #b8860b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    color: white;
+}
+
+body {
+    font-family: "Prompt", Sans-Serif;
+    background: var(--bg-color);
+}
+
+h1 {
+    font-size: clamp(24px, 5vw, 48px);
+}
+
+h2 {
+    font-size: clamp(20px, 4vw, 40px);
+}
+
+h3 {
+    font-size: clamp(18px, 3.5vw, 34px);
+}
+p {
+    font-size: clamp(16px, 3vw, 32px);
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 32px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    background: #000;
+}
+
+.navbar h1 {
+    font-size: clamp(18px, 2vw, 24px);
+}
+
+.hero-section {
+    width: 100%;
+    height: auto;
+}
+
+.hero-section .wapper-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 64px 32px 32px 64px;
+    width: 100%;
+    border: 1px solid #000;
+}
+
+.hero-section .wapper-content h1,
+p,
+button {
+    transform: translateX(-200%);
+    opacity: 0;
+    animation: fadeRight 1s ease-out forwards;
+}
+
+.hero-section .wapper-content p {
+    margin-top: 1rem;
+}
+
+.hero-section .wapper-img {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    transform: translateX(200%);
+    opacity: 0;
+    animation: fadeLeft 1s ease-out forwards;
+}
+.hero-section .wapper-img img {
+    width: 40%;
+    height: auto;
+    display: block;
+    transition: ease-out 1s;
+    transform: scale(1.5);
+}
+
+.hero-section .wapper-img img:hover {
+    transform: scale(2);
+}
+
+@keyframes fadeLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes fadeRight {
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.wapper-btn {
+    margin-top: 3.5rem;
+}
+
+.btn-buy {
+    background: var(--primary-color);
+    border: none;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    padding: 0.5rem;
+    margin-right: 1rem;
+    color: white;
+    min-width: 200px;
+    transition: ease 1s;
+}
+
+.btn-book {
+    background: inherit;
+    border: 1px solid var(--color-secret);
+    border-radius: 8px;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    color: white;
+    min-width: 200px;
+    transition: ease 1s;
+    margin-top: 1rem;
+}
+
+.btn-book:hover {
+    background: var(--bg-card-color);
+}
+.btn-buy:hover {
+    background: #4b008299;
+}
+
+@media (max-width: 768px) {
+    .hero-section .wapper-content {
+        flex-direction: column-reverse;
+        gap: 2.5rem 0rem;
+        overflow-x: hidden;
+    }
+
+    .hero-section .wapper-img {
+        width: 100%;
+    }
+
+    .hero-section .wapper-img img {
+        width: 100%;
+        height: auto;
+        display: inline-block;
+    }
+}
+
+.section-feature {
+    width: 100%;
+    height: auto;
+    padding: 4rem 4rem;
+}
+
+.section-feature h2 {
+    margin-bottom: 3rem;
+}
+
+.section-feature .wapper-card {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    animation: fadeup 1s ease forwards;
+}
+
+.section-feature .wapper-card .card-feature {
+    background: var(--bg-card-color);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    width: 30%;
+    overflow: hidden;
+    transition: ease-out 0.25s;
+    opacity: 1;
+}
+@keyframes fadeup {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.section-feature .wapper-card .card-feature:hover {
+    transform: scale(1.2);
+    color: var(--primary-color);
+}
+.section-feature .wapper-card:hover .card-feature:not(:hover) {
+    opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+    .section-feature .wapper-card {
+        flex-direction: column;
+    }
+    .section-feature .wapper-card .card-feature {
+        width: 100%;
+    }
+}
